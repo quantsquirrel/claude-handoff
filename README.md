@@ -8,7 +8,7 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-success?style=flat-square)](https://github.com/anthropics/claude-code)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue?style=flat-square)](https://github.com/quantsquirrel/claude-code-handoff)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue?style=flat-square)](https://github.com/quantsquirrel/claude-code-handoff)
 [![🇰🇷 Korean](https://img.shields.io/badge/🇰🇷-Korean_Supported-red?style=flat-square)](#한국어-korean)
 
 </div>
@@ -1103,6 +1103,17 @@ sudo apt-get install xclip
 ---
 
 ## Changelog
+
+### v1.2.0 (February 1, 2026)
+
+**UX Improvements**
+
+- 📝 Added clear `/clear` + paste instruction at end of handoff output
+- 📖 Added "How to Resume" section in Quick Start
+- 🎨 Improved README design with flat-square badges
+- 📁 Added project structure tree section
+- 🔄 Replaced broken unicode boxes with markdown tables
+- 🧹 Removed duplicate footer text and cleaned up acknowledgments
 
 ### v1.1.0 (January 31, 2026)
 
