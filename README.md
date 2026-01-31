@@ -21,7 +21,7 @@
 **Handoff works without any framework or plugin system.** Just tell Claude:
 
 ```
-세션을 끝내기 전에 handoff 문서를 만들어줘
+Before ending this session, create a handoff document
 ```
 
 Claude will generate a complete handoff document with:
