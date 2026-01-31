@@ -429,32 +429,33 @@ PREVIOUS SESSION: sess_2026_01_30_145632
 
 The skill automatically copies a compact version to your clipboard:
 
-```
-+------------------------------------------------------------------+
-| [HANDOFF] User Auth Migration | Branch: feature/auth-migration   |
-+------------------------------------------------------------------+
-| STATUS: 65% | BLOCKER: Auth0 tenant config pending               |
-| PROGRESS: Auth0 provider done | TESTING: Starting today          |
-+------------------------------------------------------------------+
-| FILES:                                                           |
-|   - src/auth/auth0-provider.ts                                   |
-|   - src/config/environment.ts                                    |
-|   - tests/auth0.test.ts                                          |
-+------------------------------------------------------------------+
-| DECISIONS:                                                       |
-|   - Auth0 adoption (25th)                                        |
-|   - Batch migration (29th)                                       |
-|   - Dual validation (30th)                                       |
-+------------------------------------------------------------------+
-| FAILED APPROACHES:                                               |
-|   x DB transaction lock -> Use batched migration                 |
-|   x Client refresh races -> Centralize auth context              |
-|   x Force logout -> Dual validation period                       |
-+------------------------------------------------------------------+
-| NEXT: Complete provider init -> Staging test -> Deploy           |
-| PREV: sess_2026_01_30_145632                                     |
-+------------------------------------------------------------------+
-```
+> **[HANDOFF] User Auth Migration**
+>
+> Branch: `feature/auth-migration`
+
+| Field | Value |
+|-------|-------|
+| **Status** | 65% complete |
+| **Blocker** | Auth0 tenant config pending |
+| **Progress** | Auth0 provider done, testing starting today |
+
+**Files:**
+- `src/auth/auth0-provider.ts`
+- `src/config/environment.ts`
+- `tests/auth0.test.ts`
+
+**Decisions:**
+- Auth0 adoption (25th)
+- Batch migration (29th)
+- Dual validation (30th)
+
+**Failed Approaches:**
+- ~~DB transaction lock~~ → Use batched migration
+- ~~Client refresh races~~ → Centralize auth context
+- ~~Force logout~~ → Dual validation period
+
+**Next:** Complete provider init → Staging test → Deploy
+**Previous Session:** `sess_2026_01_30_145632`
 
 ---
 
@@ -973,28 +974,29 @@ npm install
 
 ### 한국어 클립보드 프롬프트 예시
 
-```
-+--------------------------------------------------------------+
-| [인수인계] 사용자 인증 마이그레이션                          |
-| 브랜치: feature/auth-migration                               |
-+--------------------------------------------------------------+
-| 상태: 65% | 차단 요소: Auth0 테넌트 구성 대기 중             |
-| 진행: Auth0 제공자 완료 | 테스트: 오늘 시작                  |
-+--------------------------------------------------------------+
-| 파일: src/auth/auth0-provider.ts                             |
-|       src/config/environment.ts                              |
-+--------------------------------------------------------------+
-| 결정사항:                                                    |
-|   - Auth0 도입 (25일)                                        |
-|   - 배치 마이그레이션 (29일)                                 |
-|   - 이중 검증 (30일)                                         |
-+--------------------------------------------------------------+
-| 실패한 접근법:                                               |
-|   DB 트랜잭션 락 -> 배치 마이그레이션 사용                   |
-+--------------------------------------------------------------+
-| 다음: 제공자 초기화 완료 -> 스테이징 테스트 -> 배포          |
-+--------------------------------------------------------------+
-```
+> **[인수인계] 사용자 인증 마이그레이션**
+>
+> 브랜치: `feature/auth-migration`
+
+| 항목 | 내용 |
+|------|------|
+| **상태** | 65% 완료 |
+| **차단 요소** | Auth0 테넌트 구성 대기 중 |
+| **진행** | Auth0 제공자 완료, 테스트 오늘 시작 |
+
+**파일:**
+- `src/auth/auth0-provider.ts`
+- `src/config/environment.ts`
+
+**결정사항:**
+- Auth0 도입 (25일)
+- 배치 마이그레이션 (29일)
+- 이중 검증 (30일)
+
+**실패한 접근법:**
+- ~~DB 트랜잭션 락~~ → 배치 마이그레이션 사용
+
+**다음 단계:** 제공자 초기화 완료 → 스테이징 테스트 → 배포
 
 ### 설정 파일
 
