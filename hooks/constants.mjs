@@ -94,3 +94,18 @@ Without a handoff:
 
 Action required: Run /handoff NOW before context overflow.
 `;
+
+/**
+ * Auto-draft feature enabled
+ */
+export const AUTO_DRAFT_ENABLED = true;
+
+/**
+ * Draft file prefix
+ */
+export const DRAFT_FILE_PREFIX = '.draft-';
+
+/**
+ * Lock file name
+ */
+export const LOCK_FILE_NAME = '.generating.lock';

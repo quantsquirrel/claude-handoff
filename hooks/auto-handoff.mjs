@@ -35,6 +35,8 @@ import {
   HANDOFF_SUGGESTION_MESSAGE,
   HANDOFF_WARNING_MESSAGE,
   HANDOFF_CRITICAL_MESSAGE,
+  AUTO_DRAFT_ENABLED,
+  DRAFT_FILE_PREFIX,
 } from './constants.mjs';
 
 const DEBUG = process.env.AUTO_HANDOFF_DEBUG === '1';
@@ -91,6 +93,7 @@ function getSessionState(state, sessionId) {
       suggestionCount: 0,
       estimatedTokens: 0,
       handoffCreated: false,
+      draftSaved: false,
     };
   }
   return state.sessions[sessionId];
@@ -131,6 +134,82 @@ function checkRecentHandoff() {
     }
   }
   return false;
+}
+
+/**
+ * Get git information (simple)
+ */
+function getGitInfo() {
+  try {
+    const { execSync } = require('child_process');
+    const branch = execSync('git rev-parse --abbrev-ref HEAD 2>/dev/null', {
+      encoding: 'utf8',
+      cwd: process.cwd(),
+    }).trim();
+    const status = execSync('git status --short 2>/dev/null', {
+      encoding: 'utf8',
+      cwd: process.cwd(),
+    }).trim();
+    return { branch, status };
+  } catch (e) {
+    return { branch: null, status: null };
+  }
+}
+
+/**
+ * Save auto-draft at 70% threshold
+ */
+function saveDraft(sessionId, estimatedTokens) {
+  if (!AUTO_DRAFT_ENABLED) {
+    return;
+  }
+
+  try {
+    const handoffDir = path.join(process.cwd(), '.claude', 'handoffs');
+    if (!fs.existsSync(handoffDir)) {
+      fs.mkdirSync(handoffDir, { recursive: true });
+    }
+
+    const timestamp = Date.now();
+    const draftFile = path.join(handoffDir, `${DRAFT_FILE_PREFIX}${timestamp}.json`);
+
+    const gitInfo = getGitInfo();
+    const draftData = {
+      sessionId,
+      timestamp: new Date().toISOString(),
+      estimatedTokens,
+      cwd: process.cwd(),
+      gitBranch: gitInfo.branch,
+      gitStatus: gitInfo.status,
+    };
+
+    // Remove old draft files for this session
+    try {
+      const files = fs.readdirSync(handoffDir);
+      for (const file of files) {
+        if (file.startsWith(DRAFT_FILE_PREFIX) && file.endsWith('.json')) {
+          const filePath = path.join(handoffDir, file);
+          try {
+            const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            if (data.sessionId === sessionId) {
+              fs.unlinkSync(filePath);
+              debugLog('Removed old draft:', file);
+            }
+          } catch (e) {
+            // Ignore invalid draft files
+          }
+        }
+      }
+    } catch (e) {
+      debugLog('Error cleaning old drafts:', e.message);
+    }
+
+    fs.writeFileSync(draftFile, JSON.stringify(draftData, null, 2));
+    debugLog('Draft saved:', draftFile);
+  } catch (e) {
+    debugLog('Failed to save draft:', e.message);
+    // Don't fail the hook if draft save fails
+  }
 }
 
 /**
@@ -184,6 +263,12 @@ function main() {
 
   // Calculate usage ratio
   const usageRatio = sessionState.estimatedTokens / CLAUDE_CONTEXT_LIMIT;
+
+  // Save auto-draft at 70% threshold
+  if (usageRatio >= HANDOFF_THRESHOLD && !sessionState.draftSaved) {
+    saveDraft(session_id, sessionState.estimatedTokens);
+    sessionState.draftSaved = true;
+  }
 
   // Check if below threshold
   if (usageRatio < HANDOFF_THRESHOLD) {
