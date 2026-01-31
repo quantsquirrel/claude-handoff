@@ -1,10 +1,12 @@
 <div id="top"></div>
 
+<div align="center">
+
+<img src="assets/handoff.jpeg" alt="Handoff - Pass the baton between sessions" width="600">
+
 # 🪄 Handoff
 
 > **Pass the baton. Keep the momentum. Never explain your codebase twice.**
-
-<div align="center">
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-success?style=flat-square)](https://github.com/anthropics/claude-code)
@@ -13,14 +15,35 @@
 
 </div>
 
-**Master context continuity across sessions.** Seamlessly transfer context, decisions, and progress between Claude Code sessions with automatic clipboard integration and quality validation.
+---
 
-**Works independently - no framework dependencies required.**
+## Standalone Usage (No Dependencies!)
+
+**Handoff works without any framework or plugin system.** Just tell Claude:
+
+```
+세션을 끝내기 전에 handoff 문서를 만들어줘
+```
+
+Claude will generate a complete handoff document with:
+- Session summary and progress
+- Key decisions and rationale
+- Failed approaches (don't repeat!)
+- Next steps for the next session
+
+**That's it.** No installation, no configuration, no dependencies.
+
+> 💡 **Want more features?** Install as a skill for clipboard auto-copy, quality scoring, and auto-handoff hooks.
+
+---
+
+**Master context continuity across sessions.** Seamlessly transfer context, decisions, and progress between Claude Code sessions with automatic clipboard integration and quality validation.
 
 ---
 
 ## Table of Contents
 
+- [Standalone Usage](#standalone-usage-no-dependencies)
 - [What is Handoff?](#what-is-handoff)
 - [Workflow](#workflow)
 - [Features](#features)
@@ -56,17 +79,14 @@
 
 ## Workflow
 
-```
-Session 1          /handoff           Session 2
-    |                  |                  |
-    v                  v                  v
-+--------+      +------------+      +--------+
-|Working | ---> |  Save      | ---> |Continue|
-|        |      |  Copy      |      |        |
-+--------+      |  Score     |      +--------+
-                |  Check     |
-                +------------+
-```
+**Session 1** → `/handoff` → **Session 2**
+
+1. **Working** - You're deep in a coding session
+2. **Save** - Run `/handoff` to capture everything
+3. **Copy** - Context is automatically copied to clipboard
+4. **Score** - Quality validation ensures completeness
+5. **Check** - Secret detection prevents leaks
+6. **Continue** - Paste in new session and keep going
 
 **No re-explaining required.** Everything you need transfers automatically.
 
