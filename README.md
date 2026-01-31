@@ -53,21 +53,21 @@ An independent, standalone Claude Code plugin for creating comprehensive session
 
 ```bash
 # Install from Claude Code plugin marketplace
-/plugin marketplace add quantsquirrel/handoff
+/plugin marketplace add quantsquirrel/claude-code-handoff
 ```
 
 **Or: Direct Install**
 
 ```bash
 # Install directly from GitHub
-/plugin install quantsquirrel/handoff
+/plugin install quantsquirrel/claude-code-handoff
 ```
 
 **Or: Manual Installation**
 
 ```bash
 # Clone to Claude Code skills directory
-git clone https://github.com/quantsquirrel/handoff.git ~/.claude/skills/handoff
+git clone https://github.com/quantsquirrel/claude-code-handoff.git ~/.claude/skills/handoff
 ```
 
 ### Basic Usage
@@ -98,7 +98,7 @@ After running `/handoff`, you'll see:
 ### Recommended: Plugin Marketplace (Easiest)
 
 ```bash
-/plugin marketplace add quantsquirrel/handoff
+/plugin marketplace add quantsquirrel/claude-code-handoff
 ```
 
 This automatically:
@@ -110,7 +110,7 @@ This automatically:
 ### Alternative: Direct Install
 
 ```bash
-/plugin install quantsquirrel/handoff
+/plugin install quantsquirrel/claude-code-handoff
 ```
 
 This automatically:
@@ -123,7 +123,7 @@ This automatically:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/quantsquirrel/handoff.git ~/.claude/skills/handoff
+git clone https://github.com/quantsquirrel/claude-code-handoff.git ~/.claude/skills/handoff
 ```
 
 2. Install dependencies:
@@ -720,7 +720,7 @@ We welcome contributions! Please follow these guidelines:
 ### Development Setup
 
 ```bash
-git clone https://github.com/quantsquirrel/handoff.git
+git clone https://github.com/quantsquirrel/claude-code-handoff.git
 cd handoff
 npm install
 npm run dev
@@ -757,7 +757,7 @@ npm run test:all
 
 ### Report Issues
 
-Found a bug? [Open an issue](https://github.com/quantsquirrel/handoff/issues) with:
+Found a bug? [Open an issue](https://github.com/quantsquirrel/claude-code-handoff/issues) with:
 - Clear description of the problem
 - Steps to reproduce
 - Expected vs actual behavior
@@ -908,21 +908,21 @@ Under the conditions of:
 
 ```bash
 # Claude Code 플러그인 마켓플레이스에서 설치
-/plugin marketplace add quantsquirrel/handoff
+/plugin marketplace add quantsquirrel/claude-code-handoff
 ```
 
 **또는: 직접 설치**
 
 ```bash
 # GitHub에서 직접 설치
-/plugin install quantsquirrel/handoff
+/plugin install quantsquirrel/claude-code-handoff
 ```
 
 **또는: 수동 설치**
 
 ```bash
 # Claude Code skills 디렉토리에 복제
-git clone https://github.com/quantsquirrel/handoff.git ~/.claude/skills/handoff
+git clone https://github.com/quantsquirrel/claude-code-handoff.git ~/.claude/skills/handoff
 ```
 
 ### 사용법
@@ -1027,7 +1027,7 @@ sudo apt-get install xclip
 
 ### 피드백 및 기여
 
-한국어 관련 이슈나 기여는 [GitHub Issues](https://github.com/quantsquirrel/handoff/issues)를 통해 제출해주세요.
+한국어 관련 이슈나 기여는 [GitHub Issues](https://github.com/quantsquirrel/claude-code-handoff/issues)를 통해 제출해주세요.
 
 ---
 
@@ -1037,15 +1037,15 @@ sudo apt-get install xclip
 
 - **Documentation:** Check the [docs](./docs) directory
 - **Examples:** See [examples](./examples) directory
-- **Issues:** [GitHub Issues](https://github.com/quantsquirrel/handoff/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/quantsquirrel/handoff/discussions)
+- **Issues:** [GitHub Issues](https://github.com/quantsquirrel/claude-code-handoff/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/quantsquirrel/claude-code-handoff/discussions)
 
 ### Citation
 
 If you use Handoff in your workflow, consider giving it a star on GitHub:
 
 ```
-⭐ github.com/quantsquirrel/handoff
+⭐ github.com/quantsquirrel/claude-code-handoff
 ```
 
 ---
