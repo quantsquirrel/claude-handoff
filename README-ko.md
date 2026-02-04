@@ -80,23 +80,28 @@
 
 ## 설치
 
-**스킬 파일을 commands 폴더에 복사:**
+### 옵션 1: 단일 파일 (권장)
 
 ```bash
 curl -o ~/.claude/commands/handoff.md \
   https://raw.githubusercontent.com/quantsquirrel/claude-handoff/main/SKILL.md
 ```
 
-**끝.** `/handoff` 명령어를 사용할 수 있습니다.
+**끝.** 이제 `/handoff`를 사용할 수 있습니다.
 
-### 선택: 자동 핸드오프 훅
+### 옵션 2: 전체 플러그인 (고급)
 
-컨텍스트 70% 도달 시 알림 받기:
+컨텍스트 70% 도달 시 자동 알림을 원하면:
 
 ```bash
-git clone https://github.com/quantsquirrel/claude-handoff.git ~/.claude/skills/handoff
-cd ~/.claude/skills/handoff && bash hooks/install.sh
+/plugin marketplace add quantsquirrel/claude-handoff
+/plugin install handoff@quantsquirrel
 ```
+
+포함 기능:
+- 70% 컨텍스트 도달 시 자동 알림
+- 작업 크기 추정
+- `/handoff` CLI 자동완성
 
 ---
 

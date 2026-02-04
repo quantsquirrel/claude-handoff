@@ -19,27 +19,28 @@
 
 ## Quick Start
 
-### Option 1: Marketplace (Recommended - Auto-updates)
-
-```bash
-/plugin marketplace add quantsquirrel/claude-handoff
-/plugin install handoff@quantsquirrel
-```
-
-### Option 2: Manual Install
+### Option 1: Single File (Recommended)
 
 ```bash
 curl -o ~/.claude/commands/handoff.md \
   https://raw.githubusercontent.com/quantsquirrel/claude-handoff/main/SKILL.md
 ```
 
-### Use
+**Done.** Now you can use `/handoff`.
+
+### Option 2: Full Plugin (Advanced)
+
+For auto-notifications when context reaches 70%:
 
 ```bash
-/handoff
+/plugin marketplace add quantsquirrel/claude-handoff
+/plugin install handoff@quantsquirrel
 ```
 
-**Done.** Your context is preserved for the next session.
+This includes:
+- Auto-handoff reminder at 70% context
+- Task size estimation
+- CLI autocomplete for `/handoff`
 
 ---
 
