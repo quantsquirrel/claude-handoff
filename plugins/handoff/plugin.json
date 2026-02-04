@@ -1,9 +1,11 @@
 {
   "name": "handoff",
-  "version": "2.0.0",
-  "description": "Session context handoff with fast/slow modes",
+  "version": "2.1.0",
+  "description": "Session context handoff with hierarchical summary levels (L1/L2/L3)",
   "author": {
     "name": "quantsquirrel"
   },
-  "commands": "./"
+  "repository": "https://github.com/quantsquirrel/claude-handoff",
+  "license": "MIT",
+  "skills": "./skills/"
 }
