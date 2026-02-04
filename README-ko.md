@@ -102,6 +102,16 @@ cd ~/.claude/skills/handoff && bash hooks/install.sh
 
 ## 사용법
 
+### 워크플로우
+
+```
+1. /handoff          → 컨텍스트가 클립보드에 저장됨
+2. /clear            → 새 세션 시작
+3. Cmd+V (붙여넣기)  → 전체 컨텍스트로 재개
+```
+
+### 명령어
+
 ```bash
 /handoff fast [주제]        # 빠른 체크포인트 (~200 토큰)
 /handoff slow [주제]        # 전체 핸드오프 (~500 토큰)

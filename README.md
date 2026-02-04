@@ -57,6 +57,16 @@ curl -o ~/.claude/commands/handoff.md \
 
 ## Usage
 
+### Workflow
+
+```
+1. /handoff          → Context saved to clipboard
+2. /clear            → Start fresh session
+3. Cmd+V (paste)     → Resume with full context
+```
+
+### Commands
+
 ```bash
 /handoff fast [topic]        # Quick checkpoint (~200 tokens)
 /handoff slow [topic]        # Full handoff (~500 tokens)
