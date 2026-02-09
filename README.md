@@ -194,7 +194,7 @@ Handoff now intelligently detects task complexity and adjusts handoff timing acc
 ```
 You: "Refactor all authentication and migrate entire user database"
 
-🔍 Large task detected - handoff will trigger at 50% (vs. 85% for small tasks)
+Large task detected - handoff will trigger at 50% (vs. 85% for small tasks)
 ```
 
 This means you'll be prompted to create a handoff earlier, reducing the risk of losing progress.
@@ -314,6 +314,6 @@ Issues and PRs welcome at [GitHub](https://github.com/quantsquirrel/claude-hando
 
 ---
 
-**🏃 Ready to pass the baton?** Run `/handoff` — don't pass raw history, pass distilled knowledge.
+**Ready to pass the baton?** Run `/handoff` — don't pass raw history, pass distilled knowledge.
 
-<div align="right"><a href="#top">⬆️ Back to Top</a></div>
+<div align="right"><a href="#top">Back to Top</a></div>
